@@ -1,0 +1,47 @@
+
+<div class="container mt-5">
+    <div class="container mt-5 text-center"> 
+        <h1>Lista de Produtores</h1>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>CPF/CNPJ</th>
+          <th>Nome do Produtor</th>
+          <th>Nome da Fazenda</th>
+          <th>Cidade</th>
+          <th>Estado</th>
+          <th>Área Total (Hectares)</th>
+          <th>Área Agricultável (Hectares)</th>
+          <th>Área de Vegetação (Hectares)</th>
+          <th>Culturas Plantadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let produtor of produtores">
+          <td>{{ produtor.id }}</td>
+          <td>{{ produtor.cpf_cnpj }}</td>
+          <td>{{ produtor.nome }}</td>
+          <td>{{ produtor.nome_fazenda }}</td>
+          <td>{{ produtor.cidade }}</td>
+          <td>{{ produtor.estado }}</td>
+          <td>{{ produtor.area_total }}</td>
+          <td>{{ produtor.area_agricultavel }}</td>
+          <td>{{ produtor.area_vegetacao }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let cultura of produtor.culturas">{{ cultura }}</li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<br><br>
+<div class="d-flex">
+    <button type="button" class="btn btn-primary mx-auto" (click)="grafico()">Gráfico</button>&nbsp;
+    <button type="button" class="btn btn-primary mx-auto" (click)="cadastro()">Cadastro</button>&nbsp;
+    </div>
+
+  
